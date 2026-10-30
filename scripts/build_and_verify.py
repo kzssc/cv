@@ -48,10 +48,10 @@ def build_html():
                 if line.startswith("title:"):
                     title = line.split(":", 1)[1].strip().strip('"\'')
 
-    # Convert Markdown via pandoc if available, otherwise basic fallback
+    # Convert Markdown via pandoc if available, using GFM (GitHub Flavored Markdown)
     pandoc_bin = shutil.which("pandoc")
     if pandoc_bin:
-        cmd = [pandoc_bin, "-f", "markdown", "-t", "html"]
+        cmd = [pandoc_bin, "-f", "gfm", "-t", "html"]
         res = subprocess.run(cmd, input=body_md, text=True, capture_output=True)
         if res.returncode != 0:
             print(f"Error compiling markdown with pandoc: {res.stderr}", file=sys.stderr)

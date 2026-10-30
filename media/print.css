@@ -1,188 +1,260 @@
 /* Print Stylesheet for Sisheng Chris Zhang CV */
-/* Strict 2-Page Restriction Enforcement */
+/* Pixel-matched to original Apple Pages PDF layout */
 
 @page {
   size: A4 portrait;
-  margin: 9mm 12mm 9mm 12mm;
+  margin: 0;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   -webkit-print-color-adjust: exact !important;
   print-color-adjust: exact !important;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", Baskerville, Georgia, "Times New Roman", serif;
   font-size: 8.8pt;
-  line-height: 1.26;
-  color: #111;
-  background: #fff;
-  margin: 0;
-  padding: 0;
+  line-height: 1.24;
+  color: #000000;
+  background: #ffffff;
 }
 
 .no-print,
-.toolbar {
+.screen-toolbar {
   display: none !important;
 }
 
-#main {
-  width: 100%;
-  max-width: 100%;
+#cv-container {
+  width: 210mm;
   margin: 0;
   padding: 0;
-  box-shadow: none;
-  border-radius: 0;
 }
 
-#content {
-  width: 100%;
+/* Strict A4 Page Container */
+.cv-page {
+  width: 210mm;
+  height: 297mm;
+  max-height: 297mm;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always !important;
+  break-after: page !important;
+  overflow: hidden;
+  background: #ffffff;
 }
 
-/* Header */
-h1 {
-  font-size: 16pt;
-  font-weight: 700;
-  color: #000;
-  margin: 0 0 1pt 0;
+/* Top Banner on Page 1 */
+.top-banner {
+  height: 23mm;
+  background-color: #2374b8;
+  padding: 0 11mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-name {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 26pt;
+  font-weight: 300;
+  color: #ffffff;
   letter-spacing: -0.2pt;
-  text-align: left;
 }
 
-#webaddress {
-  font-family: "SF Mono", Menlo, Consolas, monospace;
-  font-size: 7.6pt;
-  color: #444;
-  margin-bottom: 6pt;
-  padding-bottom: 3pt;
-  border-bottom: 0.8pt solid #ccc;
+.header-meta {
+  text-align: right;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#webaddress p {
-  padding-left: 0 !important;
-  margin: 0;
+.header-cv {
+  font-size: 13pt;
+  font-weight: 300;
+  color: #ffffff;
 }
 
-#webaddress a {
-  color: #111;
-  text-decoration: none;
+.header-date {
+  font-size: 8.5pt;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 1pt;
+}
+
+/* Page Body */
+.page-body {
+  padding: 3mm 11mm 15mm 11mm;
+}
+
+.page-2-top {
+  padding-top: 9mm;
+}
+
+/* Summary */
+.summary {
+  font-size: 9pt;
+  line-height: 1.28;
+  margin-top: 1.5pt;
+  margin-bottom: 4pt;
+  text-align: justify;
 }
 
 /* Section Headings */
-h2 {
-  font-size: 9.6pt;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.6pt;
-  color: #8b0000;
+.section-title,
+h2.section-title {
+  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", Baskerville, Georgia, serif;
+  font-size: 17.5pt;
+  font-weight: 400;
+  color: #2374b8;
   margin-top: 6pt;
-  margin-bottom: 3pt;
-  padding-bottom: 1.5pt;
-  border-bottom: 1pt solid #8b0000;
-  break-after: avoid;
-  page-break-after: avoid;
-}
-
-/* Section first after header */
-h1 + #webaddress + h2 {
-  margin-top: 2pt;
-}
-
-/* Body text & entries */
-p {
-  margin-bottom: 3.2pt;
-  position: relative;
-  padding-left: 78px;
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
-
-/* Dates */
-p > code:first-child {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 72px;
-  font-family: "SF Mono", Menlo, Consolas, monospace;
-  font-size: 7.6pt;
-  font-weight: 600;
-  color: #444;
-  background: none;
+  margin-bottom: 2.5pt;
+  line-height: 1.1;
   border: none;
+  padding: 0;
+}
+
+/* Education Table */
+.edu-table {
+  margin-bottom: 4pt;
+}
+
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 8.6pt;
+  line-height: 1.24;
+  margin-bottom: 0.8pt;
+}
+
+.col-date {
+  width: 82px;
+  flex-shrink: 0;
+}
+
+.col-inst {
+  flex-grow: 1;
   text-align: left;
 }
 
-/* Summary paragraph */
-h2#summary + p {
-  padding-left: 0;
-  font-size: 8.5pt;
-  line-height: 1.26;
-  margin-bottom: 4pt;
+.col-deg {
+  width: 60px;
+  text-align: left;
+  flex-shrink: 0;
 }
 
-/* Lists */
-ul {
-  list-style: disc outside;
-  margin-left: 92px;
-  margin-bottom: 4pt;
-  margin-top: 1pt;
-  break-inside: avoid;
-  page-break-inside: avoid;
+.col-field {
+  width: 175px;
+  text-align: right;
+  flex-shrink: 0;
 }
 
-ul li {
-  margin-bottom: 1.6pt;
-  font-size: 8.4pt;
+.edu-sub {
+  font-style: italic;
+  font-size: 8.2pt;
+  line-height: 1.2;
+  margin-left: 82px;
+  margin-bottom: 2pt;
+}
+
+/* Job & Experience Rows */
+.job-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: bold;
+  font-size: 8.6pt;
   line-height: 1.24;
+  margin-top: 3.8pt;
+  margin-bottom: 1.2pt;
 }
 
-/* Nested lists under Skills */
-ul ul {
-  margin-left: 14px;
-  margin-top: 1pt;
-  margin-bottom: 1pt;
-  list-style-type: circle;
+.job-date {
+  width: 82px;
+  flex-shrink: 0;
 }
 
-ul ul li {
-  margin-bottom: 1pt;
+.job-role {
+  flex-grow: 1;
+  text-align: left;
 }
 
-strong {
-  font-weight: 600;
+.job-org {
+  text-align: right;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.job-desc {
+  font-size: 8.3pt;
+  line-height: 1.22;
+  margin: 1.2pt 0 1.8pt 0;
+  text-align: justify;
+}
+
+/* Bullet Lists */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 10px;
+  font-size: 8.3pt;
+  line-height: 1.22;
+  margin-bottom: 1.1pt;
+}
+
+li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 8pt;
   color: #000;
 }
 
-em {
-  font-style: italic;
-  color: #333;
+li strong {
+  font-weight: bold;
 }
 
-/* Hard Page Break Boundary */
-.page-break {
-  display: block;
-  page-break-after: always !important;
-  break-after: page !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
+/* Skills Sub-lists */
+ul ul {
+  margin-left: 14px;
+  margin-top: 0.8pt;
+  margin-bottom: 0.8pt;
 }
 
-/* Footer reference */
-#footer-ref {
-  margin-top: 6pt;
-  padding-top: 4pt;
-  border-top: 0.6pt solid #ccc;
-  font-size: 7.4pt;
-  color: #555;
+ul ul li {
+  margin-bottom: 0.8pt;
+}
+
+/* Bottom Banner / Footer */
+.bottom-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 11.5mm;
+  background-color: #2374b8;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 7.2pt;
+  line-height: 1.28;
   text-align: center;
-  break-inside: avoid;
-  page-break-inside: avoid;
 }
 
-#footer-ref a {
-  color: #333;
-  text-decoration: none;
+.banner-line {
+  color: #ffffff;
+}
+
+.bottom-banner a {
+  color: #ffffff;
+  text-decoration: underline;
 }

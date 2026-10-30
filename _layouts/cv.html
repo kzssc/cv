@@ -8,18 +8,16 @@
   <link href="media/print.css" type="text/css" rel="stylesheet" media="print">
 </head>
 <body>
-  <div class="toolbar no-print">
+  <div class="screen-toolbar no-print">
     <div class="toolbar-content">
       <span class="badge">Strict 2-Page CV</span>
       <button onclick="window.print()" class="btn-print">Print / Save as PDF</button>
-      <span class="tip">Tip: Enable background graphics in print settings</span>
+      <span class="tip">Pixel-matched to Pages PDF layout (A4)</span>
     </div>
   </div>
 
-  <div id="main">
-    <div id="content">
-      {{ content }}
-    </div>
+  <div id="cv-container">
+    {{ content }}
   </div>
 </body>
 </html>
