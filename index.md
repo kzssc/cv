@@ -8,17 +8,17 @@ note:
 layout: cv
 ---
 
-<div class="cv-page" id="page-1" markdown="1">
+<div class="cv-page" id="page-1">
 
 <header class="top-banner">
-  <div class="header-name">Sisheng Chris ZHANG</div>
-  <div class="header-meta">
-    <div class="header-cv">//Curriculum Vitae</div>
-    <div class="header-date">Oct 2026</div>
-  </div>
+<div class="header-name">Sisheng Chris ZHANG</div>
+<div class="header-meta">
+<div class="header-cv">//Curriculum Vitae</div>
+<div class="header-date">Oct 2026</div>
+</div>
 </header>
 
-<div class="page-body" markdown="1">
+<div class="page-body">
 
 <div class="summary">
 Global professional with 10+ years of experience. Developed an independent and resilient personality. Highly practical, motivated, and innovative with a strong sense of responsibility. Enthusiastic about challenging work, with strong critical thinking, learning ability, data analysis, problem-solving, communication skills, and teamwork spirit.
@@ -60,18 +60,18 @@ Global professional with 10+ years of experience. Developed an independent and r
 <h2 class="section-title">//Professional Experience</h2>
 
 <div class="job-row">
-  <span class="job-date">2027 Q1</span>
-  <span class="job-role">Full Fellow, Hoover Chair in Social and Economic Ethics</span>
-  <span class="job-org">Université Catholique de Louvain</span>
+<span class="job-date">2027 Q1</span>
+<span class="job-role">Full Fellow, Hoover Chair in Social and Economic Ethics</span>
+<span class="job-org">Université Catholique de Louvain</span>
 </div>
 
 - **Research Focus**: Normative political philosophy and economic/social ethics, working in collaboration with Prof. Yannick Vanderborght
 - **Duties**: Will conduct short-term research at the Hoover Chair, present a research seminar paper, and participate in university seminars and academic exchanges
 
 <div class="job-row">
-  <span class="job-date">2021 - 2026</span>
-  <span class="job-role">FPI Fellow</span>
-  <span class="job-org">Universitat Pompeu Fabra (UPF)</span>
+<span class="job-date">2021 - 2026</span>
+<span class="job-role">FPI Fellow</span>
+<span class="job-org">Universitat Pompeu Fabra (UPF)</span>
 </div>
 
 - **Event Co-Organisation**: Co-organised high-level international academic conferences and workshops at top-tier institutions, including the University of Oxford (2022) and Universitat Pompeu Fabra (2021, 2022).
@@ -80,9 +80,9 @@ Global professional with 10+ years of experience. Developed an independent and r
 - **Community Building**: Created and managed the UPF Law & Philosophy mailing list and convened cross-institutional academic seminars, facilitating internal communications and network growth.
 
 <div class="job-row">
-  <span class="job-date">2021 - 2025</span>
-  <span class="job-role">Teaching Assistant</span>
-  <span class="job-org">Universitat Pompeu Fabra (UPF)</span>
+<span class="job-date">2021 - 2025</span>
+<span class="job-role">Teaching Assistant</span>
+<span class="job-org">Universitat Pompeu Fabra (UPF)</span>
 </div>
 
 - **Taught Courses**: Assisted in "History of Political Philosophy" and "Justice and Individual Rights" with over 80 students each
@@ -90,9 +90,9 @@ Global professional with 10+ years of experience. Developed an independent and r
 - **Achievements**: Received a teaching evaluation score of 8.8/10 and rated as “Excellent” in UPF teacher training
 
 <div class="job-row">
-  <span class="job-date">2022 - 2023</span>
-  <span class="job-role">Research Assistant</span>
-  <span class="job-org">Universitat Pompeu Fabra (UPF)</span>
+<span class="job-date">2022 - 2023</span>
+<span class="job-role">Research Assistant</span>
+<span class="job-org">Universitat Pompeu Fabra (UPF)</span>
 </div>
 
 - Assisted Prof. Serena Olsaretti (UPF) in “Demography, Ethics & Public Policy” (DEPP), an initiative within “Justice and the Family: An Analysis of the Normative Significance of Procreation and Parenthood in a Just Society” funded by the European Research Council
@@ -100,9 +100,9 @@ Global professional with 10+ years of experience. Developed an independent and r
 - Responsible for DEPP outreaching programmes (mailing list, blog, social media)
 
 <div class="job-row">
-  <span class="job-date">2019 - 2020</span>
-  <span class="job-role">Project Coordinator</span>
-  <span class="job-org">Asia-Pacific Academy of Ophthalmology (APAO)</span>
+<span class="job-date">2019 - 2020</span>
+<span class="job-role">Project Coordinator</span>
+<span class="job-org">Asia-Pacific Academy of Ophthalmology (APAO)</span>
 </div>
 
 - **Event Management**: Coordinated exhibitors and sponsors, organised scientific panels, and oversaw charity functions for the annual APAO Congress
@@ -111,9 +111,9 @@ Global professional with 10+ years of experience. Developed an independent and r
 - **Participant Engagement**: Engaged with over 15,000 participants from 75 regions and countries
 
 <div class="job-row">
-  <span class="job-date">2019 Summer</span>
-  <span class="job-role">Secretary-General</span>
-  <span class="job-org">Jiangxi Model United Nations (JxMUN) and ASDAN China</span>
+<span class="job-date">2019 Summer</span>
+<span class="job-role">Secretary-General</span>
+<span class="job-org">Jiangxi Model United Nations (JxMUN) and ASDAN China</span>
 </div>
 
 <p class="job-desc">JxMUN is a secondary-school level Model United Nations conference initiated by the Jiangxi provincial education ministry, attracting over 200 delegates. Responsible for all aspects of the conference, including overseeing academic performance, training committee directors, organising workshops for directors, delegates, and staff</p>
@@ -121,15 +121,15 @@ Global professional with 10+ years of experience. Developed an independent and r
 </div>
 
 <footer class="bottom-banner">
-  <div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career@czhang.uk">career@czhang.uk</a></div>
-  <div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
+<div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career@czhang.uk">career@czhang.uk</a></div>
+<div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
 </footer>
 
 </div>
 
-<div class="cv-page" id="page-2" markdown="1">
+<div class="cv-page" id="page-2">
 
-<div class="page-body page-2-top" markdown="1">
+<div class="page-body page-2-top">
 
 - **Leadership Role**: Recruited by ASDAN China for expertise in MUN and conference management
 - Managed all aspects of the conference, focusing on academic performance
@@ -137,17 +137,17 @@ Global professional with 10+ years of experience. Developed an independent and r
 - Organised workshops for directors, delegates, and conference staff
 
 <div class="job-row">
-  <span class="job-date">2017 - 2019</span>
-  <span class="job-role">Founder and Chief Operations Officer (P/T)</span>
-  <span class="job-org">Clifford Alumni (CA)</span>
+<span class="job-date">2017 - 2019</span>
+<span class="job-role">Founder and Chief Operations Officer (P/T)</span>
+<span class="job-org">Clifford Alumni (CA)</span>
 </div>
 
 <p class="job-desc">Founded and led an international 8-person team to manage alumni network operations, successfully executing multiple fundraising and networking initiatives for over 500 attendees.</p>
 
 <div class="job-row">
-  <span class="job-date">2016 - 2017</span>
-  <span class="job-role">Research Assistant</span>
-  <span class="job-org">University of Warwick</span>
+<span class="job-date">2016 - 2017</span>
+<span class="job-role">Research Assistant</span>
+<span class="job-org">University of Warwick</span>
 </div>
 
 - Assisted Prof. Matthew Clayton (Warwick) and Dr. Tom Parr (Essex) in a research project on the ethics of Santa Claus
@@ -156,17 +156,17 @@ Global professional with 10+ years of experience. Developed an independent and r
 - Made a significant contribution to the project's research efforts
 
 <div class="job-row">
-  <span class="job-date">2015 Summer</span>
-  <span class="job-role">Intern Editor</span>
-  <span class="job-org">South Star Media Corporation, Guangdong Radio and Television (GRT)</span>
+<span class="job-date">2015 Summer</span>
+<span class="job-role">Intern Editor</span>
+<span class="job-org">South Star Media Corporation, Guangdong Radio and Television (GRT)</span>
 </div>
 
 <p class="job-desc">Supported TV and film production by gathering real-time social media intelligence, ensuring content accuracy, and assisting with cross-departmental project management and budget control.</p>
 
 <div class="job-row">
-  <span class="job-date">2014 Summer</span>
-  <span class="job-role">Director-General</span>
-  <span class="job-org">World Youth Economic Forum (WYEF) and ASDAN China</span>
+<span class="job-date">2014 Summer</span>
+<span class="job-role">Director-General</span>
+<span class="job-org">World Youth Economic Forum (WYEF) and ASDAN China</span>
 </div>
 
 <p class="job-desc">WYEF is a simulation of the World Economic Forum for secondary school students from all over the world. ASDAN China, Yale University, and the Global Undergraduate Economic Forum are the co-hosts of WYEF; As the Director-General for WYEF, comprehensively oversaw of all aspects of the conference which include:</p>
@@ -179,17 +179,17 @@ Global professional with 10+ years of experience. Developed an independent and r
 <h2 class="section-title">//Campus Experience</h2>
 
 <div class="job-row">
-  <span class="job-date">2020 Summer</span>
-  <span class="job-role">Seminar Organiser & Speaker</span>
-  <span class="job-org">706 Guangzhou, China</span>
+<span class="job-date">2020 Summer</span>
+<span class="job-role">Seminar Organiser & Speaker</span>
+<span class="job-org">706 Guangzhou, China</span>
 </div>
 
 - **Knowledge Translation**: Organised and delivered a public seminar on distributive justice, successfully translating complex theoretical concepts into accessible content for a general audience.
 
 <div class="job-row">
-  <span class="job-date">2014 – 2015</span>
-  <span class="job-role">Director–General</span>
-  <span class="job-org">University of Essex Model United Nations (MUNEx) 2015</span>
+<span class="job-date">2014 – 2015</span>
+<span class="job-role">Director–General</span>
+<span class="job-org">University of Essex Model United Nations (MUNEx) 2015</span>
 </div>
 
 - **Rules of Procedure**: Authored the 39-page MUNEx 2015 Rules of Procedures
@@ -199,9 +199,9 @@ Global professional with 10+ years of experience. Developed an independent and r
 - **Marketing**: Designed marketing materials based on market research and previous experience
 
 <div class="job-row">
-  <span class="job-date">2010 – 2011</span>
-  <span class="job-role">President</span>
-  <span class="job-org">The 7th Students’ Union, Clifford School</span>
+<span class="job-date">2010 – 2011</span>
+<span class="job-role">President</span>
+<span class="job-org">The 7th Students’ Union, Clifford School</span>
 </div>
 
 - Awarded Outstanding Student Cadres of Panyu District and elected member of the Guangzhou ACE Student Union
@@ -223,8 +223,8 @@ Global professional with 10+ years of experience. Developed an independent and r
 </div>
 
 <footer class="bottom-banner">
-  <div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career@czhang.uk">career@czhang.uk</a></div>
-  <div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
+<div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career@czhang.uk">career@czhang.uk</a></div>
+<div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
 </footer>
 
 </div>
