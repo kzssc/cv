@@ -17,7 +17,7 @@ Global professional with 10+ years of experience. Developed an independent and r
 
 | Date | Institution | Degree | Field |
 | :--- | :--- | :--- | ---: |
-| 2021 – 2026 | Universitat Pompeu Fabra, Spain | Ph.D | Law / Political Philosophy |
+| 2021 – 2026 | Universitat Pompeu Fabra, Spain | Ph.D. | Law / Political Philosophy |
 | | *FPI Fellowship by the Spanish Ministry of Science and Innovation: “Justice, Autonomy, and Self-Employment”* | | |
 | 2017 – 2018 | Universitat Pompeu Fabra, Spain | M.A. | Political Philosophy |
 | 2016 – 2017 | University of Warwick, UK | M.A. | Political and Legal Theory |
