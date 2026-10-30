@@ -53,6 +53,8 @@ def build_html():
                     title = line.split(":", 1)[1].strip().strip('"\'')
                 elif line.startswith("name:"):
                     name = line.split(":", 1)[1].strip().strip('"\'')
+                elif line.startswith("display_name:"):
+                    name = line.split(":", 1)[1].strip().strip('"\'')
                 elif line.startswith("cv_title:"):
                     cv_title = line.split(":", 1)[1].strip().strip('"\'')
                 elif line.startswith("cv_date:"):
@@ -88,7 +90,7 @@ def build_html():
     final_html = layout.replace("{{ cv_pages[0] }}", part1)
     final_html = final_html.replace("{{ cv_pages[1] }}", part2)
     final_html = re.sub(r"\{\{\s*page\.title[^\}]*\}\}", title, final_html)
-    final_html = re.sub(r"\{\{\s*page\.name[^\}]*\}\}", name, final_html)
+    final_html = re.sub(r"\{\{\s*page\.(name|display_name)[^\}]*\}\}", name, final_html)
     final_html = re.sub(r"\{\{\s*page\.cv_title[^\}]*\}\}", cv_title, final_html)
     final_html = re.sub(r"\{\{\s*page\.cv_date[^\}]*\}\}", cv_date, final_html)
     # Remove remaining liquid blocks

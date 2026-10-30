@@ -2,7 +2,7 @@
 title: Sisheng Chris Zhang — Curriculum Vitae
 subtitle: Political Philosophy & Law
 author: S. Chris Zhang^[Law, Universitat Pompeu Fabra, Barcelona / academic@czhang.uk ]
-name: Sisheng Chris ZHANG
+display_name: Sisheng Chris ZHANG
 cv_title: //Curriculum Vitae
 cv_date: Oct 2026
 lang: en-gb
@@ -15,13 +15,36 @@ layout: cv
 
 ## //Education
 
-| Date | Institution | Degree | Field |
-| :--- | :--- | :--- | ---: |
-| 2021 – 2026 | Universitat Pompeu Fabra, Spain | Ph.D | Law / Political Philosophy |
-| | *FPI Fellowship by the Spanish Ministry of Science and Innovation: “Justice, Autonomy, and Self-Employment”* | | |
-| 2017 – 2018 | Universitat Pompeu Fabra, Spain | Master | Political Philosophy |
-| 2016 – 2017 | University of Warwick, UK | Master | Political and Legal Theory |
-| 2013 – 2016 | University of Essex, UK | Bachelor | Philosophy, Politics and Economics |
+<table class="edu-table">
+  <tr>
+    <td class="col-date">2021 – 2026</td>
+    <td class="col-inst">Universitat Pompeu Fabra, Spain</td>
+    <td class="col-deg">Ph.D</td>
+    <td class="col-field">Law / Political Philosophy</td>
+  </tr>
+  <tr class="sub-row">
+    <td></td>
+    <td colspan="3"><em>FPI Fellowship by the Spanish Ministry of Science and Innovation: “Justice, Autonomy, and Self-Employment”</em></td>
+  </tr>
+  <tr>
+    <td class="col-date">2017 – 2018</td>
+    <td class="col-inst">Universitat Pompeu Fabra, Spain</td>
+    <td class="col-deg">Master</td>
+    <td class="col-field">Political Philosophy</td>
+  </tr>
+  <tr>
+    <td class="col-date">2016 – 2017</td>
+    <td class="col-inst">University of Warwick, UK</td>
+    <td class="col-deg">Master</td>
+    <td class="col-field">Political and Legal Theory</td>
+  </tr>
+  <tr>
+    <td class="col-date">2013 – 2016</td>
+    <td class="col-inst">University of Essex, UK</td>
+    <td class="col-deg">Bachelor</td>
+    <td class="col-field">Philosophy, Politics and Economics</td>
+  </tr>
+</table>
 
 ## //Professional Experience
 
