@@ -658,12 +658,26 @@ html[lang="zh-cn"] .section-title {
     flex-shrink: 0;
   }
 
-  .btn-download,
   .btn-print {
-    padding: 5px 10px;
-    font-size: 11.5px;
+    display: none !important;
+  }
+
+  .btn-download {
+    background: var(--primary-color, #2374b8);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
     white-space: nowrap;
     flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  }
+
+  .btn-download:hover {
+    color: #ffffff;
+    opacity: 0.9;
   }
 
   #cv-container {
