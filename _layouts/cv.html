@@ -1,19 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en-gb' }}">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title | default: "Sisheng Chris Zhang — Curriculum Vitae" }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="media/screen.css" type="text/css" rel="stylesheet" media="screen">
   <link href="media/print.css" type="text/css" rel="stylesheet" media="print">
 </head>
-<body>
+<body class="theme-{{ page.theme_color | default: 'blue' }}{% if page.lang == 'zh-cn' %} lang-zh{% endif %}">
   <div class="screen-toolbar no-print">
     <div class="toolbar-content">
-      <button onclick="window.print()" class="btn-print">Print / Save as PDF</button>
+      <div class="lang-switcher">
+        <a href="index.html" class="lang-link{% if page.lang != 'zh-cn' %} active{% endif %}">English</a>
+        <span class="lang-sep">|</span>
+        <a href="index-cn.html" class="lang-link{% if page.lang == 'zh-cn' %} active{% endif %}">中文</a>
+      </div>
+      <div class="toolbar-actions">
+        <button onclick="window.print()" class="btn-print">{% if page.lang == 'zh-cn' %}打印 / 导出 PDF{% else %}Print / Save as PDF{% endif %}</button>
+      </div>
     </div>
   </div>
 
@@ -35,8 +42,13 @@
       </div>
 
       <footer class="bottom-banner">
+        {% if page.lang == 'zh-cn' %}
+        <div class="banner-line">*奖学金来源: 西班牙科技创新部 &nbsp;&nbsp; 领英: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career(at)czhang.uk" onclick="this.href=this.href.replace('(at)','@')">career@czhang.uk</a></div>
+        <div class="banner-line">注: 推荐人信息及本简历的英文版、学术版等更多详情，请访问 <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>。</div>
+        {% else %}
         <div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career(at)czhang.uk" onclick="this.href=this.href.replace('(at)','@')">career@czhang.uk</a></div>
         <div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
+        {% endif %}
       </footer>
     </div>
 
@@ -47,8 +59,13 @@
       </div>
 
       <footer class="bottom-banner">
+        {% if page.lang == 'zh-cn' %}
+        <div class="banner-line">*奖学金来源: 西班牙科技创新部 &nbsp;&nbsp; 领英: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career(at)czhang.uk" onclick="this.href=this.href.replace('(at)','@')">career@czhang.uk</a></div>
+        <div class="banner-line">注: 推荐人信息及本简历的英文版、学术版等更多详情，请访问 <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>。</div>
+        {% else %}
         <div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career(at)czhang.uk" onclick="this.href=this.href.replace('(at)','@')">career@czhang.uk</a></div>
         <div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
+        {% endif %}
       </footer>
     </div>
     {% endif %}

@@ -1,4 +1,4 @@
-name: Build and Verify Strict 2-Page CV
+name: Build and Verify Dual-Language CVs
 
 on:
   push:
@@ -18,20 +18,23 @@ jobs:
       - name: Install System Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc poppler-utils
+          sudo apt-get install -y pandoc poppler-utils fonts-noto-cjk fonts-wqy-zenhei
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Build and Enforce Strict 2-Page Restriction
+      - name: Build and Enforce Strict Page Restrictions
         run: |
           python3 scripts/build_and_verify.py
 
-      - name: Upload Verified PDF Artifact
+      - name: Upload Verified PDF Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Sisheng-Chris-Zhang-CV
-          path: cv.pdf
+          name: Sisheng-Chris-Zhang-CVs
+          path: |
+            cv.pdf
+            cv-cn.pdf
+            cv-bilingual.pdf
           retention-days: 30

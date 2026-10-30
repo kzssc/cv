@@ -14,12 +14,28 @@
   print-color-adjust: exact !important;
 }
 
+:root {
+  --primary-color: #2374b8;
+}
+
+body.theme-green,
+html[lang="zh-cn"] body,
+body.lang-zh {
+  --primary-color: #578726;
+}
+
 body {
   font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", "Libre Caslon Text", Baskerville, Georgia, "Times New Roman", serif;
   font-size: 8.8pt;
   line-height: 1.24;
   color: #000000;
   background: #ffffff;
+}
+
+body.lang-zh,
+html[lang="zh-cn"] body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Serif SC", SimSun, sans-serif;
+  font-size: 9.3pt;
 }
 
 .no-print,
@@ -50,7 +66,7 @@ body {
 .top-banner {
   position: relative;
   height: 23.4mm;
-  background-color: #2374b8;
+  background-color: var(--primary-color, #2374b8);
   padding: 0 10mm;
   display: flex;
   justify-content: space-between;
@@ -66,8 +82,8 @@ body {
   height: 1.2mm;
   background: repeating-linear-gradient(
     to right,
-    #2374b8 0,
-    #2374b8 2.8mm,
+    var(--primary-color, #2374b8) 0,
+    var(--primary-color, #2374b8) 2.8mm,
     transparent 2.8mm,
     transparent 5.6mm
   );
@@ -132,7 +148,7 @@ h2,
   font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", "Libre Caslon Text", Baskerville, Georgia, serif;
   font-size: 19.5pt;
   font-weight: 400;
-  color: #2374b8;
+  color: var(--primary-color, #2374b8);
   margin-top: 11pt;
   margin-bottom: 2pt;
   line-height: 23pt;
@@ -338,7 +354,7 @@ ul ul li {
   left: 0;
   width: 100%;
   height: 12.5mm;
-  background-color: #2374b8;
+  background-color: var(--primary-color, #2374b8);
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -357,4 +373,61 @@ ul ul li {
 .bottom-banner a {
   color: #ffffff;
   text-decoration: underline;
+}
+
+/* Chinese Typography Overrides */
+body.lang-zh td.col-date,
+body.lang-zh td:first-child,
+body.lang-zh .row b:first-child,
+body.lang-zh p.row b:first-child,
+body.lang-zh p > code:first-child,
+html[lang="zh-cn"] td.col-date,
+html[lang="zh-cn"] td:first-child,
+html[lang="zh-cn"] .row b:first-child,
+html[lang="zh-cn"] p.row b:first-child,
+html[lang="zh-cn"] p > code:first-child {
+  width: 105px;
+  padding-right: 6px;
+}
+
+body.lang-zh td.col-inst,
+body.lang-zh td:nth-child(2),
+html[lang="zh-cn"] td.col-inst,
+html[lang="zh-cn"] td:nth-child(2) {
+  width: 195px;
+}
+
+body.lang-zh td.col-deg,
+body.lang-zh td:nth-child(3),
+html[lang="zh-cn"] td.col-deg,
+html[lang="zh-cn"] td:nth-child(3) {
+  width: 90px;
+}
+
+body.lang-zh td.col-field,
+body.lang-zh td:last-child,
+html[lang="zh-cn"] td.col-field,
+html[lang="zh-cn"] td:last-child {
+  width: 328px;
+}
+
+body.lang-zh .header-name,
+html[lang="zh-cn"] .header-name {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-weight: 300;
+  letter-spacing: 2pt;
+}
+
+body.lang-zh .header-cv,
+html[lang="zh-cn"] .header-cv {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  letter-spacing: 1pt;
+}
+
+body.lang-zh h2,
+body.lang-zh .section-title,
+html[lang="zh-cn"] h2,
+html[lang="zh-cn"] .section-title {
+  font-family: "STSongti-SC-Bold", "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  font-weight: 700;
 }
