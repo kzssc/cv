@@ -1,5 +1,5 @@
 ---
-title: 张斯盛 — 个人简历
+title: CV 个人简历 张斯盛 西班牙庞培法布拉大学
 subtitle: 法学 / 政治哲学
 author: S. Chris Zhang^[Law, Universitat Pompeu Fabra, Barcelona / academic@czhang.uk ]
 display_name: 张斯盛
