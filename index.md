@@ -1,7 +1,7 @@
 ---
-title: Sisheng Chris Zhang — Curriculum Vitae
+title: CV Sisheng Chris Zhang
 subtitle: Political Philosophy & Law
-author: S. Chris Zhang^[Law, Universitat Pompeu Fabra, Barcelona / academic@czhang.uk ]
+author: S. Chris Zhang
 display_name: Sisheng Chris ZHANG
 cv_title: //Curriculum Vitae
 cv_date: Oct 2026
