@@ -593,19 +593,343 @@ html[lang="zh-cn"] .section-title {
   font-weight: 700;
 }
 
+/* Responsive Mobile Stylesheet */
 @media (max-width: 820px) {
-  .cv-page {
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: auto;
-    max-height: none;
-    box-shadow: none;
+  body {
+    background-color: #ffffff;
+    padding-bottom: 0;
   }
+
+  .screen-toolbar {
+    padding: 8px 16px;
+  }
+
+  .toolbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .lang-switcher {
+    gap: 4px;
+    font-size: 13px;
+  }
+
+  .lang-link {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .btn-print {
+    padding: 5px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  #cv-container {
+    gap: 0;
+    margin-top: 0;
+  }
+
+  .cv-page {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  /* Header on Mobile */
+  .top-banner {
+    height: auto !important;
+    min-height: auto;
+    padding: 14px 18px 12px 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px 14px;
+  }
+
+  body.lang-zh .top-banner,
+  html[lang="zh-cn"] .top-banner {
+    height: auto !important;
+    padding: 14px 18px 12px 18px;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .header-photo-wrapper {
+    margin-right: 12px;
+  }
+
+  .header-photo {
+    width: 44px;
+    height: 56px;
+  }
+
+  .header-name {
+    font-size: 20pt;
+    line-height: 1.15;
+  }
+
+  body.lang-zh .header-name,
+  html[lang="zh-cn"] .header-name {
+    font-size: 20pt;
+    letter-spacing: 1pt;
+  }
+
+  .header-meta {
+    text-align: right;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .header-cv {
+    font-size: 12pt;
+    line-height: 1.2;
+  }
+
+  body.lang-zh .header-cv,
+  html[lang="zh-cn"] .header-cv {
+    font-size: 12pt;
+    letter-spacing: 1pt;
+  }
+
+  .header-date {
+    font-size: 8.5pt;
+    margin-top: 0;
+  }
+
+  /* Body Content on Mobile */
+  .page-body {
+    padding: 16px 18px 24px 18px;
+  }
+
+  .page-2-body {
+    padding-top: 16px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .summary,
+  #page-1 .page-body > p:first-of-type,
+  .job-desc,
+  .page-body p:not(:has(code)) {
+    font-size: 9.5pt;
+    line-height: 1.42;
+    text-align: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  h2,
+  .section-title {
+    font-size: 16pt;
+    line-height: 22pt;
+    margin-top: 14pt;
+    margin-bottom: 4pt;
+  }
+
+  /* Education Table Mobile Card Layout */
+  table,
+  table.edu-table {
+    display: block;
+    width: 100% !important;
+    margin-bottom: 8pt;
+  }
+
+  tbody {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  tr:last-child {
+    border-bottom: none;
+    margin-bottom: 4px;
+    padding-bottom: 0;
+  }
+
+  td {
+    display: block;
+    width: 100% !important;
+    padding: 0 !important;
+    line-height: 1.35;
+  }
+
+  /* Date */
+  td.col-date,
+  td:first-child,
+  body.lang-zh td.col-date,
+  body.lang-zh td:first-child,
+  html[lang="zh-cn"] td.col-date,
+  html[lang="zh-cn"] td:first-child {
+    font-size: 9pt;
+    font-weight: bold;
+    color: var(--primary-color, #2374b8);
+    margin-bottom: 1px;
+    width: 100% !important;
+  }
+
+  /* Institution */
+  td.col-inst,
+  td:nth-child(2),
+  body.lang-zh td.col-inst,
+  body.lang-zh td:nth-child(2),
+  html[lang="zh-cn"] td.col-inst,
+  html[lang="zh-cn"] td:nth-child(2) {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #111111;
+    width: 100% !important;
+  }
+
+  /* Degree and Field */
+  td.col-deg,
+  td:nth-child(3),
+  body.lang-zh td.col-deg,
+  body.lang-zh td:nth-child(3),
+  html[lang="zh-cn"] td.col-deg,
+  html[lang="zh-cn"] td:nth-child(3) {
+    display: inline-block;
+    width: auto !important;
+    font-size: 9.3pt;
+    color: #333333;
+  }
+
+  td.col-field,
+  td:last-child,
+  body.lang-zh td.col-field,
+  body.lang-zh td:last-child,
+  html[lang="zh-cn"] td.col-field,
+  html[lang="zh-cn"] td:last-child {
+    display: inline-block;
+    width: auto !important;
+    text-align: left !important;
+    font-size: 9.3pt;
+    color: #555555;
+  }
+
+  /* Bullet separator between Degree and Field */
+  td:nth-child(3):not(:empty) + td:last-child:not(:empty)::before {
+    content: " · ";
+    color: #888888;
+    margin: 0 4px;
+  }
+
+  /* Fellowship subtitle sub-row */
+  tbody tr:nth-child(2) td:nth-child(2),
+  tr.sub-row td {
+    display: block;
+    width: 100% !important;
+    white-space: normal;
+    font-size: 9pt;
+    line-height: 1.35;
+    color: #444444;
+    padding-top: 2px !important;
+  }
+
+  /* Visiting researcher full-flow cell */
+  tbody tr td:nth-child(3):has(+ td:empty),
+  tbody tr:last-child td:nth-child(3) {
+    white-space: normal;
+    display: block;
+    width: 100% !important;
+    margin-top: 2px;
+  }
+
+  /* Experience Header Rows Mobile Stack */
+  .row,
+  p.row,
+  p:has(> code:first-child) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 13pt;
+    margin-bottom: 4pt;
+    line-height: 1.35;
+  }
+
+  .row b:first-child,
+  p.row b:first-child,
+  p > code:first-child,
+  body.lang-zh p > code:first-child,
+  html[lang="zh-cn"] p > code:first-child {
+    width: auto !important;
+    font-size: 9pt;
+    font-weight: bold;
+    color: var(--primary-color, #2374b8);
+    margin-bottom: 2px;
+    padding: 0;
+  }
+
+  .row b:nth-child(2),
+  p.row b:nth-child(2),
+  p > code:first-child + strong {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #111111;
+    line-height: 1.35;
+  }
+
+  .row b:last-child,
+  p.row b:last-child,
+  p > code:first-child + strong ~ strong:last-child {
+    margin-left: 0 !important;
+    text-align: left !important;
+    font-size: 9.3pt;
+    font-weight: 500;
+    color: #555555;
+    margin-top: 2px;
+  }
+
+  /* Bullet Lists */
+  ul {
+    padding-left: 18px;
+  }
+
+  li {
+    font-size: 9.3pt;
+    line-height: 1.42;
+    margin-bottom: 4px;
+    text-align: left;
+  }
+
+  /* Bottom Banner on Mobile: hide on page 1, show at end of page 2 */
+  #page-1 .bottom-banner {
+    display: none;
+  }
+
+  #page-2 .bottom-banner,
   .bottom-banner {
     position: relative;
     height: auto;
-    padding: 12px 10px;
+    padding: 16px 18px;
+    margin-top: 16px;
+  }
+
+  .banner-line {
+    font-size: 8pt;
+    line-height: 1.45;
+    word-break: break-word;
   }
 }

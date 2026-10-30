@@ -124,14 +124,14 @@ def build_single_html(md_path, html_path):
     # Process Liquid conditions for lang
     if lang == "zh-cn":
         # Keep Chinese branch, discard English branch
-        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*==\s*'zh-cn'\s*%\}(.*?)\{%\s*else\s*%\}(.*?)\{%\s*endif\s*%\}", r"\1", final_html, flags=re.DOTALL)
-        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*!=\s*'zh-cn'\s*%\}(.*?)\{%\s*endif\s*%\}", "", final_html, flags=re.DOTALL)
-        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*==\s*'zh-cn'\s*%\}(.*?)\{%\s*endif\s*%\}", r"\1", final_html, flags=re.DOTALL)
+        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*==\s*'zh-cn'\s*%\}((?:(?!\{%\s*(?:if|endif)\s*%\})[\s\S])*?)\{%\s*else\s*%\}((?:(?!\{%\s*(?:if|endif)\s*%\})[\s\S])*?)\{%\s*endif\s*%\}", r"\1", final_html)
+        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*==\s*'zh-cn'\s*%\}((?:(?!\{%\s*(?:if|endif)\s*%\})[\s\S])*?)\{%\s*endif\s*%\}", r"\1", final_html)
+        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*!=\s*'zh-cn'\s*%\}((?:(?!\{%\s*(?:if|endif)\s*%\})[\s\S])*?)\{%\s*endif\s*%\}", "", final_html)
     else:
         # Keep English branch, discard Chinese branch
-        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*==\s*'zh-cn'\s*%\}(.*?)\{%\s*else\s*%\}(.*?)\{%\s*endif\s*%\}", r"\2", final_html, flags=re.DOTALL)
-        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*!=\s*'zh-cn'\s*%\}(.*?)\{%\s*endif\s*%\}", r"\1", final_html, flags=re.DOTALL)
-        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*==\s*'zh-cn'\s*%\}(.*?)\{%\s*endif\s*%\}", "", final_html, flags=re.DOTALL)
+        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*==\s*'zh-cn'\s*%\}((?:(?!\{%\s*(?:if|endif)\s*%\})[\s\S])*?)\{%\s*else\s*%\}((?:(?!\{%\s*(?:if|endif)\s*%\})[\s\S])*?)\{%\s*endif\s*%\}", r"\2", final_html)
+        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*==\s*'zh-cn'\s*%\}((?:(?!\{%\s*(?:if|endif)\s*%\})[\s\S])*?)\{%\s*endif\s*%\}", "", final_html)
+        final_html = re.sub(r"\{%\s*if\s+page\.lang\s*!=\s*'zh-cn'\s*%\}((?:(?!\{%\s*(?:if|endif)\s*%\})[\s\S])*?)\{%\s*endif\s*%\}", r"\1", final_html)
 
     # Remove remaining liquid blocks
     final_html = re.sub(r"\{%.*?%\}", "", final_html)
