@@ -12,12 +12,27 @@
     <div class="toolbar-content">
       <span class="badge">Strict 2-Page CV</span>
       <button onclick="window.print()" class="btn-print">Print / Save as PDF</button>
-      <span class="tip">Pixel-matched to Pages PDF layout (A4)</span>
+      <span class="tip">Exact Apple Pages PDF Match</span>
     </div>
   </div>
 
-  <div id="cv-container">
-    {{ content }}
+  <div id="cv-wrap">
+    <header class="top-banner">
+      <div class="header-name">Sisheng Chris ZHANG</div>
+      <div class="header-meta">
+        <div class="header-cv">//Curriculum Vitae</div>
+        <div class="header-date">Oct 2026</div>
+      </div>
+    </header>
+
+    <main id="cv-content">
+      {{ content }}
+    </main>
+
+    <footer class="bottom-banner">
+      <div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career@czhang.uk">career@czhang.uk</a></div>
+      <div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
+    </footer>
   </div>
 </body>
 </html>

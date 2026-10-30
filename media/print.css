@@ -1,9 +1,9 @@
 /* Print Stylesheet for Sisheng Chris Zhang CV */
-/* Pixel-matched to original Apple Pages PDF layout */
+/* Pixel-matched to Apple Pages PDF layout */
 
 @page {
   size: A4 portrait;
-  margin: 0;
+  margin: 0 0 12mm 0;
 }
 
 * {
@@ -27,26 +27,12 @@ body {
   display: none !important;
 }
 
-#cv-container {
-  width: 210mm;
-  margin: 0;
-  padding: 0;
-}
-
-/* Strict A4 Page Container */
-.cv-page {
-  width: 210mm;
-  height: 297mm;
-  max-height: 297mm;
+#cv-wrap {
+  width: 100%;
   position: relative;
-  box-sizing: border-box;
-  page-break-after: always !important;
-  break-after: page !important;
-  overflow: hidden;
-  background: #ffffff;
 }
 
-/* Top Banner on Page 1 */
+/* Top Banner (Appears only on Page 1) */
 .top-banner {
   height: 23mm;
   background-color: #2374b8;
@@ -82,13 +68,9 @@ body {
   margin-top: 1pt;
 }
 
-/* Page Body */
-.page-body {
-  padding: 3mm 11mm 15mm 11mm;
-}
-
-.page-2-top {
-  padding-top: 9mm;
+/* Main Content Area */
+#cv-content {
+  padding: 3mm 11mm 0 11mm;
 }
 
 /* Summary */
@@ -101,8 +83,8 @@ body {
 }
 
 /* Section Headings */
-.section-title,
-h2.section-title {
+h2,
+.section-title {
   font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", Baskerville, Georgia, serif;
   font-size: 17.5pt;
   font-weight: 400;
@@ -112,42 +94,53 @@ h2.section-title {
   line-height: 1.1;
   border: none;
   padding: 0;
+  break-after: avoid;
+  page-break-after: avoid;
 }
 
 /* Education Table */
-.edu-table {
-  margin-bottom: 4pt;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  margin-bottom: 1.5pt;
 }
 
-.edu-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+thead {
+  display: none;
+}
+
+td {
+  border: none;
+  padding: 0.8pt 0;
   font-size: 8.6pt;
   line-height: 1.24;
-  margin-bottom: 0.8pt;
+  vertical-align: baseline;
 }
 
-.col-date {
+td:first-child {
   width: 82px;
-  flex-shrink: 0;
 }
 
-.col-inst {
-  flex-grow: 1;
+td:first-child code {
+  font-family: inherit;
+  font-size: inherit;
+  color: #000;
+  background: none;
+}
+
+td:nth-child(2) {
   text-align: left;
 }
 
-.col-deg {
+td:nth-child(3) {
   width: 60px;
   text-align: left;
-  flex-shrink: 0;
 }
 
-.col-field {
+td:last-child {
   width: 175px;
   text-align: right;
-  flex-shrink: 0;
 }
 
 .edu-sub {
@@ -155,11 +148,11 @@ h2.section-title {
   font-size: 8.2pt;
   line-height: 1.2;
   margin-left: 82px;
-  margin-bottom: 2pt;
+  margin-bottom: 3pt;
 }
 
-/* Job & Experience Rows */
-.job-row {
+/* Experience Header Lines */
+p:has(> code:first-child) {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -168,22 +161,33 @@ h2.section-title {
   line-height: 1.24;
   margin-top: 3.8pt;
   margin-bottom: 1.2pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  break-after: avoid;
+  page-break-after: avoid;
 }
 
-.job-date {
+p:has(> code:first-child) code {
   width: 82px;
   flex-shrink: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  color: #000;
+  background: none;
 }
 
-.job-role {
+p:has(> code:first-child) strong {
   flex-grow: 1;
   text-align: left;
+  font-weight: bold;
 }
 
-.job-org {
+p:has(> code:first-child) .org {
+  margin-left: auto;
   text-align: right;
   flex-shrink: 0;
-  margin-left: 10px;
+  font-weight: bold;
 }
 
 .job-desc {
@@ -231,9 +235,19 @@ ul ul li {
   margin-bottom: 0.8pt;
 }
 
-/* Bottom Banner / Footer */
+/* Exact Page Break */
+.page-break {
+  page-break-after: always !important;
+  break-after: page !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Fixed Footer Banner on Every Printed Page */
 .bottom-banner {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
