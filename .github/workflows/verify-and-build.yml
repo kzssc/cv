@@ -18,7 +18,7 @@ jobs:
       - name: Install System Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc poppler-utils chromium-browser
+          sudo apt-get install -y pandoc poppler-utils
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,8 +26,6 @@ jobs:
           python-version: '3.11'
 
       - name: Build and Enforce Strict 2-Page Restriction
-        env:
-          CHROME_BIN: /usr/bin/chromium-browser
         run: |
           python3 scripts/build_and_verify.py
 
