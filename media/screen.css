@@ -1,6 +1,71 @@
 /* Screen Stylesheet for Sisheng Chris Zhang CV */
 /* Visual document preview matching Apple Pages layout */
 
+@font-face {
+  font-family: "Adobe Caslon Pro";
+  src: local("Adobe Caslon Pro"),
+       local("ACaslonPro-Regular"),
+       url("fonts/ACaslonPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adobe Caslon Pro";
+  src: local("Adobe Caslon Pro Italic"),
+       local("ACaslonPro-Italic"),
+       url("fonts/ACaslonPro-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adobe Caslon Pro";
+  src: local("Adobe Caslon Pro Semibold"),
+       local("ACaslonPro-Semibold"),
+       url("fonts/ACaslonPro-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adobe Caslon Pro";
+  src: local("Adobe Caslon Pro Semibold Italic"),
+       local("ACaslonPro-SemiboldItalic"),
+       url("fonts/ACaslonPro-SemiboldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adobe Caslon Pro";
+  src: local("Adobe Caslon Pro Bold"),
+       local("ACaslonPro-Bold"),
+       url("fonts/ACaslonPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adobe Caslon Pro";
+  src: local("Adobe Caslon Pro Bold Italic"),
+       local("ACaslonPro-BoldItalic"),
+       url("fonts/ACaslonPro-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,12 +89,17 @@ body {
   color: #000000;
   background-color: #525659;
   padding-bottom: 60px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body.lang-zh,
 html[lang="zh-cn"] body {
-  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Serif SC", SimSun, sans-serif;
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Songti SC", SimSun, sans-serif;
   font-size: 9.3pt;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Screen toolbar */
@@ -469,7 +539,7 @@ html[lang="zh-cn"] td:first-child,
 html[lang="zh-cn"] .row b:first-child,
 html[lang="zh-cn"] p.row b:first-child,
 html[lang="zh-cn"] p > code:first-child {
-  width: 105px;
+  width: 108px;
   padding-right: 6px;
 }
 
@@ -491,7 +561,7 @@ body.lang-zh td.col-field,
 body.lang-zh td:last-child,
 html[lang="zh-cn"] td.col-field,
 html[lang="zh-cn"] td:last-child {
-  width: 328px;
+  width: 325px;
 }
 
 body.lang-zh .top-banner,
@@ -501,7 +571,7 @@ html[lang="zh-cn"] .top-banner {
 
 body.lang-zh .header-name,
 html[lang="zh-cn"] .header-name {
-  font-family: "STSongti-SC-Bold", "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  font-family: "Songti SC", "STSongti-SC-Bold", "STSong", "Noto Serif SC", SimSun, serif;
   font-size: 28pt;
   font-weight: 700;
   letter-spacing: 2pt;
@@ -509,7 +579,7 @@ html[lang="zh-cn"] .header-name {
 
 body.lang-zh .header-cv,
 html[lang="zh-cn"] .header-cv {
-  font-family: "STSongti-SC-Bold", "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  font-family: "Songti SC", "STSongti-SC-Bold", "STSong", "Noto Serif SC", SimSun, serif;
   font-size: 16pt;
   font-weight: 700;
   letter-spacing: 1pt;
@@ -519,7 +589,7 @@ body.lang-zh h2,
 body.lang-zh .section-title,
 html[lang="zh-cn"] h2,
 html[lang="zh-cn"] .section-title {
-  font-family: "STSongti-SC-Bold", "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  font-family: "Songti SC", "STSongti-SC-Bold", "STSong", "Noto Serif SC", SimSun, serif;
   font-weight: 700;
 }
 
