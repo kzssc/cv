@@ -19,10 +19,10 @@ Global professional with 10+ years of experience. Developed an independent and r
 | :--- | :--- | :--- | ---: |
 | 2021 – 2026 | Universitat Pompeu Fabra, Spain | Ph.D | Law / Political Philosophy |
 | | *FPI Fellowship by the Spanish Ministry of Science and Innovation: “Justice, Autonomy, and Self-Employment”* | | |
-| 2017 – 2018 | Universitat Pompeu Fabra, Spain | Master | Political Philosophy |
-| 2016 – 2017 | University of Warwick, UK | Master | Political and Legal Theory |
-| 2013 – 2016 | University of Essex, UK | Bachelor | Philosophy, Politics and Economics |
-| 2023 | Concordia University, Canada | Visiting Researcher | Department of Philosophy and Social Justice Centre |
+| 2017 – 2018 | Universitat Pompeu Fabra, Spain | M.A | Political Philosophy |
+| 2016 – 2017 | University of Warwick, UK | M.A | Political and Legal Theory |
+| 2013 – 2016 | University of Essex, UK | B.A | Philosophy, Politics and Economics |
+| 2023 | Concordia University, Canada | Visiting Researcher at the Department of Philosophy and Social Justice Centre | | 
 
 ## //Professional Experience
 
