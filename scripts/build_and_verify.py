@@ -78,9 +78,10 @@ def build_html():
         layout = f.read()
 
     # Split on page-break marker
-    split_marker = '<div class="page-break"></div>'
-    if split_marker in html_content:
-        pages = html_content.split(split_marker)
+    if "<hr" in html_content:
+        pages = re.split(r"<hr\s*/?>", html_content, maxsplit=1)
+    elif '<div class="page-break"></div>' in html_content:
+        pages = html_content.split('<div class="page-break"></div>', 1)
     else:
         pages = [html_content, ""]
 

@@ -161,7 +161,8 @@ body {
 }
 
 /* Summary */
-.summary {
+.summary,
+.page-body > p:first-of-type {
   font-size: 10pt;
   line-height: 13pt;
   margin-top: 2pt;
@@ -188,6 +189,7 @@ table,
 table.edu-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   border: none;
   margin-bottom: 4pt;
 }
@@ -199,7 +201,7 @@ thead {
 td {
   border: none;
   padding: 0;
-  font-size: 10pt;
+  font-size: 9.8pt;
   line-height: 13pt;
   vertical-align: baseline;
   font-family: inherit;
@@ -222,26 +224,31 @@ td:first-child code {
 
 td.col-inst,
 td:nth-child(2) {
+  width: 330px;
   text-align: left;
 }
 
 td.col-deg,
 td:nth-child(3) {
-  width: 58px;
+  width: 68px;
   text-align: left;
 }
 
 td.col-field,
 td:last-child {
-  width: 195px;
+  width: 230px;
   text-align: right;
 }
 
+tbody tr:nth-child(2) td:nth-child(2),
 tr.sub-row td {
   padding-top: 0;
   padding-bottom: 0;
   font-size: 9.5pt;
   line-height: 13pt;
+  font-style: italic;
+  overflow: visible;
+  white-space: nowrap;
 }
 
 tr.sub-row em {
@@ -250,7 +257,8 @@ tr.sub-row em {
 
 /* 3-Column Experience Header Rows */
 .row,
-p.row {
+p.row,
+p:has(> code:first-child) {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -262,29 +270,39 @@ p.row {
 }
 
 .row b:first-child,
-p.row b:first-child {
+p.row b:first-child,
+p > code:first-child {
   width: 90px;
   flex-shrink: 0;
-  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
   font-weight: bold;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
 }
 
 .row b:nth-child(2),
-p.row b:nth-child(2) {
+p.row b:nth-child(2),
+p > code:first-child + strong {
   flex-grow: 1;
   text-align: left;
   font-weight: bold;
 }
 
 .row b:last-child,
-p.row b:last-child {
+p.row b:last-child,
+p > code:first-child + strong ~ strong:last-child {
   margin-left: 10px;
   text-align: right;
   flex-shrink: 0;
   font-weight: bold;
 }
 
-.job-desc {
+.job-desc,
+.page-body > p:not(:first-of-type):not(:has(code)) {
   font-size: 10pt;
   line-height: 13pt;
   margin: 0;

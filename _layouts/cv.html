@@ -20,7 +20,8 @@
   </div>
 
   <div id="cv-container">
-    {% assign cv_pages = content | split: '<div class="page-break"></div>' %}
+    {% assign cleaned_content = content | replace: '<hr>', '<hr />' | replace: '<div class="page-break"></div>', '<hr />' %}
+    {% assign cv_pages = cleaned_content | split: '<hr />' %}
     
     <div class="cv-page" id="page-1">
       <header class="top-banner">
