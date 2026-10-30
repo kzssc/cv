@@ -34,7 +34,7 @@ jobs:
         with:
           name: Sisheng-Chris-Zhang-CVs
           path: |
-            cv.pdf
-            cv-cn.pdf
+            CV Sisheng Chris Zhang.pdf
+            CV 简历 张斯盛 西班牙庞培法布拉大学博士.pdf
             cv-bilingual.pdf
           retention-days: 30

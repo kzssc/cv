@@ -20,8 +20,8 @@ INDEX_MD_CN = os.path.join(REPO_DIR, "index-cn.md")
 LAYOUT_HTML = os.path.join(REPO_DIR, "_layouts", "cv.html")
 INDEX_HTML_EN = os.path.join(REPO_DIR, "index.html")
 INDEX_HTML_CN = os.path.join(REPO_DIR, "index-cn.html")
-OUTPUT_PDF_EN = os.path.join(REPO_DIR, "cv.pdf")
-OUTPUT_PDF_CN = os.path.join(REPO_DIR, "cv-cn.pdf")
+OUTPUT_PDF_EN = os.path.join(REPO_DIR, "CV Sisheng Chris Zhang.pdf")
+OUTPUT_PDF_CN = os.path.join(REPO_DIR, "CV 简历 张斯盛 西班牙庞培法布拉大学博士.pdf")
 OUTPUT_PDF_BILINGUAL = os.path.join(REPO_DIR, "cv-bilingual.pdf")
 
 def find_chrome():
@@ -225,9 +225,9 @@ def get_pdf_page_count(pdf_path):
 def verify_all_page_counts():
     print("[4/4] Verifying strict page restrictions...")
     targets = [
-        (OUTPUT_PDF_EN, 2, "English CV (cv.pdf)"),
-        (OUTPUT_PDF_CN, 2, "Chinese CV (cv-cn.pdf)"),
-        (OUTPUT_PDF_BILINGUAL, 4, "Bilingual Combined CV (cv-bilingual.pdf)")
+        (OUTPUT_PDF_EN, 2, f"English CV ({os.path.basename(OUTPUT_PDF_EN)})"),
+        (OUTPUT_PDF_CN, 2, f"Chinese CV ({os.path.basename(OUTPUT_PDF_CN)})"),
+        (OUTPUT_PDF_BILINGUAL, 4, f"Bilingual Combined CV ({os.path.basename(OUTPUT_PDF_BILINGUAL)})")
     ]
 
     has_violation = False
