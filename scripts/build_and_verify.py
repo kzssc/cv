@@ -39,6 +39,10 @@ def build_html():
     # Separate YAML frontmatter
     body_md = md_content
     title = "Sisheng Chris Zhang — Curriculum Vitae"
+    name = "Sisheng Chris ZHANG"
+    cv_title = "//Curriculum Vitae"
+    cv_date = "Oct 2026"
+
     if md_content.startswith("---"):
         parts = md_content.split("---", 2)
         if len(parts) >= 3:
@@ -47,8 +51,14 @@ def build_html():
             for line in frontmatter.splitlines():
                 if line.startswith("title:"):
                     title = line.split(":", 1)[1].strip().strip('"\'')
+                elif line.startswith("name:"):
+                    name = line.split(":", 1)[1].strip().strip('"\'')
+                elif line.startswith("cv_title:"):
+                    cv_title = line.split(":", 1)[1].strip().strip('"\'')
+                elif line.startswith("cv_date:"):
+                    cv_date = line.split(":", 1)[1].strip().strip('"\'')
 
-    # Convert Markdown via pandoc if available, using GFM (GitHub Flavored Markdown)
+    # Convert Markdown via pandoc
     pandoc_bin = shutil.which("pandoc")
     if pandoc_bin:
         cmd = [pandoc_bin, "-f", "gfm", "-t", "html"]
@@ -58,16 +68,31 @@ def build_html():
             sys.exit(1)
         html_content = res.stdout
     else:
-        print("Warning: pandoc not found; attempting python markdown...", file=sys.stderr)
         import markdown
-        html_content = markdown.markdown(body_md, extensions=['extra'])
+        html_content = markdown.markdown(body_md, extensions=['extra', 'tables'])
 
-    # Inject into layout template
+    # Read layout template
     with open(LAYOUT_HTML, "r", encoding="utf-8") as f:
         layout = f.read()
 
-    final_html = layout.replace("{{ content }}", html_content)
+    # Split on page-break marker
+    split_marker = '<div class="page-break"></div>'
+    if split_marker in html_content:
+        pages = html_content.split(split_marker)
+    else:
+        pages = [html_content, ""]
+
+    part1 = pages[0]
+    part2 = pages[1] if len(pages) > 1 else ""
+
+    final_html = layout.replace("{{ cv_pages[0] }}", part1)
+    final_html = final_html.replace("{{ cv_pages[1] }}", part2)
     final_html = re.sub(r"\{\{\s*page\.title[^\}]*\}\}", title, final_html)
+    final_html = re.sub(r"\{\{\s*page\.name[^\}]*\}\}", name, final_html)
+    final_html = re.sub(r"\{\{\s*page\.cv_title[^\}]*\}\}", cv_title, final_html)
+    final_html = re.sub(r"\{\{\s*page\.cv_date[^\}]*\}\}", cv_date, final_html)
+    # Remove remaining liquid blocks
+    final_html = re.sub(r"\{%.*?%\}", "", final_html)
 
     with open(INDEX_HTML, "w", encoding="utf-8") as f:
         f.write(final_html)
@@ -97,7 +122,6 @@ def generate_pdf():
     print(f"      Saved {OUTPUT_PDF}")
 
 def get_pdf_page_count(pdf_path):
-    # Try pdfinfo first
     pdfinfo = shutil.which("pdfinfo")
     if pdfinfo:
         res = subprocess.run([pdfinfo, pdf_path], capture_output=True, text=True)
@@ -106,7 +130,6 @@ def get_pdf_page_count(pdf_path):
                 if line.startswith("Pages:"):
                     return int(line.split(":", 1)[1].strip())
 
-    # Fallback to binary parsing of /Type /Pages /Count
     with open(pdf_path, "rb") as f:
         data = f.read()
     matches = re.findall(rb"/Type\s*/Page[^s]", data)
@@ -131,7 +154,6 @@ def verify_page_count():
     if pages != 2:
         print(f"\n❌ VIOLATION: Strict 2-page restriction violated!", file=sys.stderr)
         print(f"   Generated document has {pages} pages, but exactly 2 pages are required.", file=sys.stderr)
-        print(f"   Please adjust entry length, margins, or page breaks in index.md.", file=sys.stderr)
         sys.exit(1)
     else:
         print(f"\n✅ SUCCESS: Document strictly conforms to the 2-page requirement.")

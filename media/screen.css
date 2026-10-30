@@ -8,9 +8,9 @@
 }
 
 body {
-  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", Baskerville, Georgia, "Times New Roman", serif;
-  font-size: 13px;
-  line-height: 1.35;
+  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", "Libre Caslon Text", Baskerville, Georgia, "Times New Roman", serif;
+  font-size: 8.8pt;
+  line-height: 1.24;
   color: #000000;
   background-color: #525659;
   padding-bottom: 60px;
@@ -71,22 +71,35 @@ body {
   font-size: 12px;
 }
 
-/* Document Container */
-#cv-wrap {
-  width: 794px;
-  min-height: 1123px;
-  margin: 30px auto;
-  background: #ffffff;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-  position: relative;
-  overflow: hidden;
+/* Container */
+#cv-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
 }
 
-/* Top Banner */
+/* Strict A4 Sheet Display */
+.cv-page {
+  width: 210mm;
+  min-width: 210mm;
+  max-width: 210mm;
+  height: 297mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Top Banner on Page 1 */
 .top-banner {
-  height: 90px;
+  height: 23mm;
   background-color: #2374b8;
-  padding: 0 45px;
+  padding: 0 11mm;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,10 +107,10 @@ body {
 
 .header-name {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 34px;
+  font-size: 26pt;
   font-weight: 300;
   color: #ffffff;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2pt;
 }
 
 .header-meta {
@@ -106,41 +119,45 @@ body {
 }
 
 .header-cv {
-  font-size: 17px;
+  font-size: 13pt;
   font-weight: 300;
   color: #ffffff;
 }
 
 .header-date {
-  font-size: 11px;
+  font-size: 8.5pt;
   font-weight: 400;
   color: #ffffff;
-  margin-top: 2px;
+  margin-top: 1pt;
 }
 
-/* Main Content Area */
-#cv-content {
-  padding: 12px 45px 65px 45px;
+/* Main Content Body */
+.page-body {
+  padding: 3mm 11mm 15mm 11mm;
+}
+
+.page-2-body {
+  padding-top: 10mm;
 }
 
 /* Summary */
 .summary {
-  font-size: 12px;
-  line-height: 1.35;
-  margin-top: 5px;
-  margin-bottom: 14px;
+  font-size: 9pt;
+  line-height: 1.28;
+  margin-top: 1.5pt;
+  margin-bottom: 4pt;
   text-align: justify;
 }
 
 /* Section Headings */
 h2,
 .section-title {
-  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", Baskerville, Georgia, serif;
-  font-size: 24px;
+  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", "Libre Caslon Text", Baskerville, Georgia, serif;
+  font-size: 17.5pt;
   font-weight: 400;
   color: #2374b8;
-  margin-top: 18px;
-  margin-bottom: 8px;
+  margin-top: 6pt;
+  margin-bottom: 2.5pt;
   line-height: 1.1;
   border: none;
   padding: 0;
@@ -151,7 +168,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   border: none;
-  margin-bottom: 8px;
+  margin-bottom: 1.5pt;
 }
 
 thead {
@@ -160,21 +177,24 @@ thead {
 
 td {
   border: none;
-  padding: 2px 0;
-  font-size: 11.5px;
-  line-height: 1.35;
+  padding: 0.8pt 0;
+  font-size: 8.6pt;
+  line-height: 1.24;
   vertical-align: baseline;
+  font-family: inherit;
+  font-weight: normal;
 }
 
 td:first-child {
-  width: 95px;
+  width: 82px;
 }
 
 td:first-child code {
   font-family: inherit;
   font-size: inherit;
-  color: #000;
+  color: inherit;
   background: none;
+  border: none;
 }
 
 td:nth-child(2) {
@@ -182,62 +202,55 @@ td:nth-child(2) {
 }
 
 td:nth-child(3) {
-  width: 70px;
+  width: 60px;
   text-align: left;
 }
 
 td:last-child {
-  width: 220px;
+  width: 175px;
   text-align: right;
 }
 
-.edu-sub {
-  font-style: italic;
-  font-size: 11px;
-  line-height: 1.3;
-  margin-left: 95px;
-  margin-bottom: 12px;
-}
-
-/* Experience Header Lines */
-p:has(> code:first-child) {
+/* 3-Column Experience Header Rows */
+.row,
+p.row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   font-weight: bold;
-  font-size: 11.5px;
-  line-height: 1.35;
-  margin-top: 11px;
-  margin-bottom: 3px;
+  font-size: 8.6pt;
+  line-height: 1.24;
+  margin-top: 3.8pt;
+  margin-bottom: 1.2pt;
 }
 
-p:has(> code:first-child) code {
-  width: 95px;
+.row b:first-child,
+p.row b:first-child {
+  width: 82px;
   flex-shrink: 0;
-  font-family: inherit;
-  font-size: inherit;
+  text-align: left;
   font-weight: bold;
-  color: #000;
-  background: none;
 }
 
-p:has(> code:first-child) strong {
+.row b:nth-child(2),
+p.row b:nth-child(2) {
   flex-grow: 1;
   text-align: left;
   font-weight: bold;
 }
 
-p:has(> code:first-child) .org {
-  margin-left: auto;
+.row b:last-child,
+p.row b:last-child {
+  margin-left: 10px;
   text-align: right;
   flex-shrink: 0;
   font-weight: bold;
 }
 
 .job-desc {
-  font-size: 11px;
-  line-height: 1.3;
-  margin: 3px 0 5px 0;
+  font-size: 8.3pt;
+  line-height: 1.22;
+  margin: 1.2pt 0 1.8pt 0;
   text-align: justify;
 }
 
@@ -250,17 +263,17 @@ ul {
 
 li {
   position: relative;
-  padding-left: 12px;
-  font-size: 11px;
-  line-height: 1.3;
-  margin-bottom: 3px;
+  padding-left: 10px;
+  font-size: 8.3pt;
+  line-height: 1.22;
+  margin-bottom: 1.1pt;
 }
 
 li::before {
   content: "•";
   position: absolute;
   left: 0;
-  font-size: 10px;
+  font-size: 8pt;
   color: #000;
 }
 
@@ -270,44 +283,31 @@ li strong {
 
 /* Skills Sub-lists */
 ul ul {
-  margin-left: 16px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-left: 14px;
+  margin-top: 0.8pt;
+  margin-bottom: 0.8pt;
 }
 
 ul ul li {
-  margin-bottom: 2px;
+  margin-bottom: 0.8pt;
 }
 
-/* Page Break Divider on Screen */
-.page-break {
-  margin: 25px 0;
-  border-top: 2px dashed #e1e4e8;
-  position: relative;
-  text-align: center;
-}
-
-.page-break::after {
-  content: "PAGE 2";
-  position: relative;
-  top: -9px;
-  background: #ffffff;
-  padding: 0 8px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  color: #8c959f;
-  letter-spacing: 1px;
-}
-
-/* Bottom Banner */
+/* Bottom Banner / Footer */
 .bottom-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 11.5mm;
   background-color: #2374b8;
   color: #ffffff;
-  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 9.5px;
-  line-height: 1.35;
+  font-size: 7.2pt;
+  line-height: 1.28;
   text-align: center;
 }
 
@@ -321,9 +321,18 @@ ul ul li {
 }
 
 @media (max-width: 820px) {
-  #cv-wrap {
+  .cv-page {
     width: 100%;
-    margin: 0;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: none;
     box-shadow: none;
+  }
+  .bottom-banner {
+    position: relative;
+    height: auto;
+    padding: 12px 10px;
   }
 }

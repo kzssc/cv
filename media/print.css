@@ -3,7 +3,7 @@
 
 @page {
   size: A4 portrait;
-  margin: 0 0 12mm 0;
+  margin: 0;
 }
 
 * {
@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", Baskerville, Georgia, "Times New Roman", serif;
+  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", "Libre Caslon Text", Baskerville, Georgia, "Times New Roman", serif;
   font-size: 8.8pt;
   line-height: 1.24;
   color: #000000;
@@ -27,12 +27,26 @@ body {
   display: none !important;
 }
 
-#cv-wrap {
-  width: 100%;
-  position: relative;
+#cv-container {
+  width: 210mm;
+  margin: 0;
+  padding: 0;
 }
 
-/* Top Banner (Appears only on Page 1) */
+/* Strict A4 Page Container */
+.cv-page {
+  width: 210mm;
+  height: 297mm;
+  max-height: 297mm;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always !important;
+  break-after: page !important;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Top Banner on Page 1 */
 .top-banner {
   height: 23mm;
   background-color: #2374b8;
@@ -68,9 +82,13 @@ body {
   margin-top: 1pt;
 }
 
-/* Main Content Area */
-#cv-content {
-  padding: 3mm 11mm 0 11mm;
+/* Main Content Body */
+.page-body {
+  padding: 3mm 11mm 15mm 11mm;
+}
+
+.page-2-body {
+  padding-top: 10mm;
 }
 
 /* Summary */
@@ -85,7 +103,7 @@ body {
 /* Section Headings */
 h2,
 .section-title {
-  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", Baskerville, Georgia, serif;
+  font-family: "Adobe Caslon Pro", "ACaslonPro-Regular", "Libre Caslon Text", Baskerville, Georgia, serif;
   font-size: 17.5pt;
   font-weight: 400;
   color: #2374b8;
@@ -94,8 +112,6 @@ h2,
   line-height: 1.1;
   border: none;
   padding: 0;
-  break-after: avoid;
-  page-break-after: avoid;
 }
 
 /* Education Table */
@@ -116,6 +132,8 @@ td {
   font-size: 8.6pt;
   line-height: 1.24;
   vertical-align: baseline;
+  font-family: inherit;
+  font-weight: normal;
 }
 
 td:first-child {
@@ -125,8 +143,9 @@ td:first-child {
 td:first-child code {
   font-family: inherit;
   font-size: inherit;
-  color: #000;
+  color: inherit;
   background: none;
+  border: none;
 }
 
 td:nth-child(2) {
@@ -143,16 +162,9 @@ td:last-child {
   text-align: right;
 }
 
-.edu-sub {
-  font-style: italic;
-  font-size: 8.2pt;
-  line-height: 1.2;
-  margin-left: 82px;
-  margin-bottom: 3pt;
-}
-
-/* Experience Header Lines */
-p:has(> code:first-child) {
+/* 3-Column Experience Header Rows */
+.row,
+p.row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -161,30 +173,26 @@ p:has(> code:first-child) {
   line-height: 1.24;
   margin-top: 3.8pt;
   margin-bottom: 1.2pt;
-  break-inside: avoid;
-  page-break-inside: avoid;
-  break-after: avoid;
-  page-break-after: avoid;
 }
 
-p:has(> code:first-child) code {
+.row b:first-child,
+p.row b:first-child {
   width: 82px;
   flex-shrink: 0;
-  font-family: inherit;
-  font-size: inherit;
+  text-align: left;
   font-weight: bold;
-  color: #000;
-  background: none;
 }
 
-p:has(> code:first-child) strong {
+.row b:nth-child(2),
+p.row b:nth-child(2) {
   flex-grow: 1;
   text-align: left;
   font-weight: bold;
 }
 
-p:has(> code:first-child) .org {
-  margin-left: auto;
+.row b:last-child,
+p.row b:last-child {
+  margin-left: 10px;
   text-align: right;
   flex-shrink: 0;
   font-weight: bold;
@@ -235,19 +243,9 @@ ul ul li {
   margin-bottom: 0.8pt;
 }
 
-/* Exact Page Break */
-.page-break {
-  page-break-after: always !important;
-  break-after: page !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-}
-
-/* Fixed Footer Banner on Every Printed Page */
+/* Bottom Banner / Footer */
 .bottom-banner {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;

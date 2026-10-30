@@ -4,6 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title | default: "Sisheng Chris Zhang — Curriculum Vitae" }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link href="media/screen.css" type="text/css" rel="stylesheet" media="screen">
   <link href="media/print.css" type="text/css" rel="stylesheet" media="print">
 </head>
@@ -16,23 +19,40 @@
     </div>
   </div>
 
-  <div id="cv-wrap">
-    <header class="top-banner">
-      <div class="header-name">Sisheng Chris ZHANG</div>
-      <div class="header-meta">
-        <div class="header-cv">//Curriculum Vitae</div>
-        <div class="header-date">Oct 2026</div>
+  <div id="cv-container">
+    {% assign cv_pages = content | split: '<div class="page-break"></div>' %}
+    
+    <div class="cv-page" id="page-1">
+      <header class="top-banner">
+        <div class="header-name">{{ page.name | default: "Sisheng Chris ZHANG" }}</div>
+        <div class="header-meta">
+          <div class="header-cv">{{ page.cv_title | default: "//Curriculum Vitae" }}</div>
+          <div class="header-date">{{ page.cv_date | default: "Oct 2026" }}</div>
+        </div>
+      </header>
+
+      <div class="page-body">
+        {{ cv_pages[0] }}
       </div>
-    </header>
 
-    <main id="cv-content">
-      {{ content }}
-    </main>
+      <footer class="bottom-banner">
+        <div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career@czhang.uk">career@czhang.uk</a></div>
+        <div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
+      </footer>
+    </div>
 
-    <footer class="bottom-banner">
-      <div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career@czhang.uk">career@czhang.uk</a></div>
-      <div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
-    </footer>
+    {% if cv_pages.size > 1 %}
+    <div class="cv-page" id="page-2">
+      <div class="page-body page-2-body">
+        {{ cv_pages[1] }}
+      </div>
+
+      <footer class="bottom-banner">
+        <div class="banner-line">Linkedin: Sisheng Chris Zhang &nbsp;&nbsp; <a href="mailto:career@czhang.uk">career@czhang.uk</a></div>
+        <div class="banner-line">Referee details available on <a href="http://cn.czhang.uk">http://cn.czhang.uk</a>, where the Chinese version of this CV is also available.</div>
+      </footer>
+    </div>
+    {% endif %}
   </div>
 </body>
 </html>
