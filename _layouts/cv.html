@@ -19,7 +19,8 @@
         <a href="index-cn.html" class="lang-link{% if page.lang == 'zh-cn' %} active{% endif %}">中文</a>
       </div>
       <div class="toolbar-actions">
-        <button onclick="window.print()" class="btn-print">{% if page.lang == 'zh-cn' %}打印 / 导出 PDF{% else %}Print / Save as PDF{% endif %}</button>
+        <a href="{% if page.lang == 'zh-cn' %}CV 简历 张斯盛 西班牙庞培法布拉大学博士.pdf{% else %}CV Sisheng Chris Zhang.pdf{% endif %}" class="btn-download" download target="_blank">{% if page.lang == 'zh-cn' %}下载 PDF{% else %}Save PDF{% endif %}</a>
+        <button onclick="window.print()" class="btn-print">{% if page.lang == 'zh-cn' %}打印{% else %}Print{% endif %}</button>
       </div>
     </div>
   </div>
