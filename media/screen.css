@@ -145,9 +145,9 @@ body {
   padding-right: 10mm;
 }
 
-/* Summary */
+/* Summary (Page 1 only) */
 .summary,
-.page-body > p:first-of-type {
+#page-1 .page-body > p:first-of-type {
   font-size: 10pt;
   line-height: 13pt;
   margin-top: 2pt;
@@ -300,8 +300,7 @@ p > code:first-child + strong ~ strong:last-child {
 }
 
 .job-desc,
-.page-body > p:not(:first-of-type):not(:has(code)),
-.page-2-body > p:not(:has(code)) {
+.page-body p:not(:has(code)) {
   font-size: 10pt;
   line-height: 13pt;
   margin: 0;
@@ -309,6 +308,11 @@ p > code:first-child + strong ~ strong:last-child {
   text-justify: inter-word;
   hyphens: auto;
   -webkit-hyphens: auto;
+}
+
+#page-1 .page-body > p:first-of-type {
+  margin-top: 2pt;
+  margin-bottom: 4pt;
 }
 
 /* Bullet Lists */
