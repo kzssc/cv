@@ -217,6 +217,12 @@ tr.sub-row td {
   white-space: nowrap;
 }
 
+tbody tr td:nth-child(3):has(+ td:empty),
+tbody tr:last-child td:nth-child(3) {
+  overflow: visible;
+  white-space: nowrap;
+}
+
 tr.sub-row em {
   font-style: italic;
 }
