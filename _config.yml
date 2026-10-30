@@ -4,5 +4,4 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-  parse_block_html: true
 strict_page_limit: 2
