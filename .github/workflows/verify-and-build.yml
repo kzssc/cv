@@ -58,7 +58,8 @@ jobs:
           git add cv.pdf
           if ! git diff --cached --quiet; then
             git commit -m "Auto-update compiled cv.pdf from index.md [skip ci]"
-            git push
+            git pull --rebase origin main || true
+            git push origin main || true
           else
             echo "cv.pdf is already up to date."
           fi
