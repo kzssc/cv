@@ -3,9 +3,19 @@ name: Build and Verify Strict 2-Page CV
 on:
   push:
     branches: [ main, master ]
+    paths:
+      - 'index.md'
+      - '_layouts/**'
+      - 'media/**'
+      - '_config.yml'
+      - 'scripts/**'
+      - '.github/workflows/**'
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-and-verify:
@@ -14,6 +24,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install System Dependencies
         run: |
@@ -37,3 +49,16 @@ jobs:
           name: Sisheng-Chris-Zhang-CV
           path: cv.pdf
           retention-days: 30
+
+      - name: Commit Updated PDF
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cv.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-update compiled cv.pdf from index.md [skip ci]"
+            git push
+          else
+            echo "cv.pdf is already up to date."
+          fi

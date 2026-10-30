@@ -3,4 +3,5 @@ __pycache__/
 *.pyc
 .jekyll-cache/
 _site/
+index.html
 media/preview-*.png
