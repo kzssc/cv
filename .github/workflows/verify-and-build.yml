@@ -1,0 +1,39 @@
+name: Build and Verify Strict 2-Page CV
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc poppler-utils chromium-browser
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build HTML, Render PDF, and Enforce 2-Page Restriction
+        env:
+          CHROME_BIN: /usr/bin/chromium-browser
+        run: |
+          python3 scripts/build_and_verify.py
+
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Sisheng-Chris-Zhang-CV
+          path: cv.pdf
+          retention-days: 30

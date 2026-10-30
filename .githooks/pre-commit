@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Git pre-commit hook: Strict 2-Page Restriction Check
+set -e
+
+echo "=== Running Pre-Commit Check: Strict 2-Page CV Verification ==="
+python3 scripts/build_and_verify.py
+echo "=== Pre-Commit Check Passed: Exactly 2 Pages ==="

@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.pyc
+.jekyll-cache/
+_site/
+media/preview-*.png
