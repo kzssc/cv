@@ -117,4 +117,4 @@ WYEF is a simulation of the World Economic Forum for secondary school students f
   - **Design & Media**: Adobe Photoshop, Adobe InDesign.
   - **Development**: Git, Docker.
   - **Digital Management**: Microsoft Office , Website Management, Mailing Lists, Social Media Outreach (WeChat, Weibo, Blog).
-- **Languages**: Mandarin (Native), Cantonese (Native) , English (Professional) , Spanish (Elementary).
+- **Languages**: Mandarin (Native), Cantonese (Native) , English (Professional) , Spanish (Basic).
