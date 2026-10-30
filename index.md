@@ -22,6 +22,7 @@ Global professional with 10+ years of experience. Developed an independent and r
 | 2017 – 2018 | Universitat Pompeu Fabra, Spain | Master | Political Philosophy |
 | 2016 – 2017 | University of Warwick, UK | Master | Political and Legal Theory |
 | 2013 – 2016 | University of Essex, UK | Bachelor | Philosophy, Politics and Economics |
+| 2023 | Concordia University, Canada | Visiting Researcher | Department of Philosophy and Social Justice Centre |
 
 ## //Professional Experience
 

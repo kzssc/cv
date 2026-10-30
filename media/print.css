@@ -119,8 +119,11 @@ body {
   font-size: 10pt;
   line-height: 13pt;
   margin-top: 2pt;
-  margin-bottom: 5pt;
+  margin-bottom: 4pt;
   text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 /* Section Headings */
@@ -130,9 +133,9 @@ h2,
   font-size: 19.5pt;
   font-weight: 400;
   color: #2374b8;
-  margin-top: 13pt;
+  margin-top: 11pt;
   margin-bottom: 2pt;
-  line-height: 24pt;
+  line-height: 23pt;
   border: none;
   padding: 0;
 }
@@ -144,7 +147,7 @@ h2 + p:has(> code:first-child),
 h2 + .row,
 h2 + p.row,
 h2 + ul {
-  margin-top: 4pt !important;
+  margin-top: 3pt !important;
 }
 
 /* Education Table */
@@ -154,7 +157,7 @@ table.edu-table {
   border-collapse: collapse;
   table-layout: fixed;
   border: none;
-  margin-bottom: 4pt;
+  margin-bottom: 3pt;
 }
 
 thead {
@@ -173,7 +176,7 @@ td {
 
 td.col-date,
 td:first-child {
-  width: 90px;
+  width: 80px;
   text-align: left;
 }
 
@@ -187,19 +190,19 @@ td:first-child code {
 
 td.col-inst,
 td:nth-child(2) {
-  width: 330px;
+  width: 215px;
   text-align: left;
 }
 
 td.col-deg,
 td:nth-child(3) {
-  width: 68px;
+  width: 135px;
   text-align: left;
 }
 
 td.col-field,
 td:last-child {
-  width: 230px;
+  width: 288px;
   text-align: right;
 }
 
@@ -228,7 +231,7 @@ p:has(> code:first-child) {
   font-weight: bold;
   font-size: 10pt;
   line-height: 13pt;
-  margin-top: 13pt;
+  margin-top: 10.5pt;
   margin-bottom: 0;
 }
 
@@ -265,11 +268,15 @@ p > code:first-child + strong ~ strong:last-child {
 }
 
 .job-desc,
-.page-body > p:not(:first-of-type):not(:has(code)) {
+.page-body > p:not(:first-of-type):not(:has(code)),
+.page-2-body > p:not(:has(code)) {
   font-size: 10pt;
   line-height: 13pt;
   margin: 0;
   text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 /* Bullet Lists */
@@ -285,6 +292,10 @@ li {
   font-size: 10pt;
   line-height: 13pt;
   margin-bottom: 0;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 li::before {
