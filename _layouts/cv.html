@@ -30,7 +30,14 @@
     
     <div class="cv-page" id="page-1">
       <header class="top-banner">
-        <div class="header-name">{{ page.display_name | default: "Sisheng Chris ZHANG" }}</div>
+        <div class="header-left">
+          {% if page.photo %}
+          <div class="header-photo-wrapper">
+            <img src="{{ page.photo }}" alt="{{ page.display_name }}" class="header-photo" />
+          </div>
+          {% endif %}
+          <div class="header-name">{{ page.display_name | default: "Sisheng Chris ZHANG" }}</div>
+        </div>
         <div class="header-meta">
           <div class="header-cv">{{ page.cv_title | default: "//Curriculum Vitae" }}</div>
           <div class="header-date">{{ page.cv_date | default: "Oct 2026" }}</div>

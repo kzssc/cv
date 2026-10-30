@@ -152,6 +152,27 @@ html[lang="zh-cn"] body {
   z-index: 2;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-photo-wrapper {
+  margin-right: 6mm;
+  display: flex;
+  align-items: center;
+}
+
+.header-photo {
+  width: 18.5mm;
+  height: 23.6mm;
+  object-fit: cover;
+  border: 0.75pt solid #7e786c;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  display: block;
+}
+
 .header-name {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   font-size: 34pt;
@@ -473,16 +494,24 @@ html[lang="zh-cn"] td:last-child {
   width: 328px;
 }
 
+body.lang-zh .top-banner,
+html[lang="zh-cn"] .top-banner {
+  height: 28.5mm;
+}
+
 body.lang-zh .header-name,
 html[lang="zh-cn"] .header-name {
-  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  font-weight: 300;
+  font-family: "STSongti-SC-Bold", "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  font-size: 28pt;
+  font-weight: 700;
   letter-spacing: 2pt;
 }
 
 body.lang-zh .header-cv,
 html[lang="zh-cn"] .header-cv {
-  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-family: "STSongti-SC-Bold", "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  font-size: 16pt;
+  font-weight: 700;
   letter-spacing: 1pt;
 }
 

@@ -52,6 +52,7 @@ def build_single_html(md_path, html_path):
     cv_date = "Oct 2026"
     lang = "en-gb"
     theme_color = "blue"
+    photo = None
 
     if md_content.startswith("---"):
         parts = md_content.split("---", 2)
@@ -73,6 +74,8 @@ def build_single_html(md_path, html_path):
                     lang = line.split(":", 1)[1].strip().strip('"\'')
                 elif line.startswith("theme_color:"):
                     theme_color = line.split(":", 1)[1].strip().strip('"\'')
+                elif line.startswith("photo:"):
+                    photo = line.split(":", 1)[1].strip().strip('"\'')
 
     # Convert Markdown via pandoc
     pandoc_bin = shutil.which("pandoc")
@@ -110,6 +113,13 @@ def build_single_html(md_path, html_path):
     final_html = re.sub(r"\{\{\s*page\.cv_date[^\}]*\}\}", cv_date, final_html)
     final_html = re.sub(r"\{\{\s*page\.lang[^\}]*\}\}", lang, final_html)
     final_html = re.sub(r"\{\{\s*page\.theme_color[^\}]*\}\}", theme_color, final_html)
+    final_html = re.sub(r"\{\{\s*page\.photo[^\}]*\}\}", photo or "", final_html)
+    
+    # Process Liquid conditions for photo
+    if photo:
+        final_html = re.sub(r"\{%\s*if\s+page\.photo\s*%\}(.*?)\{%\s*endif\s*%\}", r"\1", final_html, flags=re.DOTALL)
+    else:
+        final_html = re.sub(r"\{%\s*if\s+page\.photo\s*%\}(.*?)\{%\s*endif\s*%\}", "", final_html, flags=re.DOTALL)
     
     # Process Liquid conditions for lang
     if lang == "zh-cn":
